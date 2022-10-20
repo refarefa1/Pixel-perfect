@@ -1,0 +1,298 @@
+:root {
+    /* pallete */
+    --clr0: #58c93a;
+    --clr1: #292929;
+    --clr2: #4f4e4e;
+    --clr3: #606060;
+    --clr4: #818181;
+    --clr5: #c2c2c2;
+    --clr6: #e1e0e0;
+    --clr7: #e5e5e5;
+    --clr8: #a6a6a6;
+    --clr9: #f8f8f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* TYPOGRAPHY */
+
+@font-face {
+    font-family: lato-bold;
+    src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: lato-reg;
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: euro;
+    src: url(../fonts/Euro/eurof35.ttf);
+}
+
+/* BASICS */
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: euro;
+    font-size: 2.5em;
+}
+
+h2 {
+    font-family: lato-bold;
+    font-size: 1.75em;
+    line-height: 1.875rem;
+    letter-spacing: 0.02em;
+    width: 386px;
+    color: var(--clr2);
+}
+
+p {
+    font-family: lato-reg;
+    color: var(--clr3);
+    line-height: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.logo span {
+    color: var(--clr0);
+}
+
+
+/* HELPERS */
+
+.flex {
+    display: flex;
+}
+
+.flex.flex-column {
+    flex-direction: column;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-center {
+    justify-content: center;
+}
+
+.flex.center {
+    justify-content: center;
+    align-items: center;
+}
+
+ul.remove-list>* {
+    list-style-type: none;
+}
+
+.full {
+    width: 100%;
+}
+
+
+/* LAYOUTS */
+
+.main-layout>*:not(.full) {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* COMPONENETS */
+
+/* header */
+
+.main-header {
+    position: fixed;
+    background-color: var(--clr1);
+    height: 130px;
+}
+
+.main-header>* {
+    color: white;
+    width: 980px;
+}
+
+.main-nav ul li {
+    width: 130px;
+    height: 130px;
+    transition: .6s;
+    cursor: pointer;
+
+}
+
+.main-header a {
+    color: white;
+    font-family: lato-bold;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+}
+
+.main-header ul li:hover{
+    background-color: var(--clr2);
+}
+
+.main-header ul li:hover >*{
+    color: var(--clr0);
+}
+
+.main-nav ul li.clicked {
+    border-bottom: var(--clr0) 6px solid;
+}
+
+.main-nav ul li.clicked>* {
+    color: var(--clr0);
+}
+
+/* cards */
+
+.main-content{
+    padding-top: 210px;
+}
+
+.card-preview {
+    height: 310px;
+    margin-bottom: 80px;
+}
+
+.card-image,
+.card-text {
+    flex-basis: 50%;
+}
+
+.card-image {
+    aspect-ratio: 47/31;
+    padding-inline-end: 20px;
+}
+
+.card-text {
+    padding-inline-start: 20px;
+}
+
+.card-preview button {
+    font-family: lato-bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+    background-color: white;
+    color: var(--clr5);
+    border: var(--clr5) 2px solid;
+    border-radius: 50px;
+    width: 186px;
+    height: 40px;
+}
+
+.card-text button span {
+    display: none;
+}
+
+.card-text button:hover {
+    color: var(--clr0);
+    border: var(--clr0) 2px solid;
+}
+
+.card-text button:hover>* {
+    display: inline;
+}
+
+
+
+/* buttons */
+
+.btns {
+    border-top: var(--clr6) 1px solid;
+    height: 75px;
+}
+
+.btns button {
+    font-family: lato-bold;
+    font-size: 1.125rem;
+    letter-spacing: 0.05625rem;
+    background-color: transparent;
+    color: var(--clr4);
+    border: none;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.btns .next-btn {
+    padding-inline-end: 30px;
+}
+
+.btns .prev-btn {
+    padding-inline-start: 30px;
+}
+
+.btns button:hover{
+    color: var(--clr3) ;
+}
+
+/* footer */
+
+.main-footer {
+    height: 315px;
+    background-color: var(--clr9);
+}
+
+.main-footer p {
+    font-size: 0.8125em;
+    letter-spacing: 0.024375em;
+    color: var(--clr8);
+}
+
+.main-footer p span {
+    font-family: lato-bold;
+}
+
+.social {
+    padding: 0;
+}
+
+.social li {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--clr7);
+    transition: .6s;
+}
+
+.social li.f:hover{
+    background-color: #516fad;
+}
+
+.social li.t:hover{
+    background-color: #1DA1F2;
+}
+
+.social li.b:hover{
+    background-color: #1769ff;
+}
+
+.social li.w:hover{
+    background-color: #144fbe;
+}
+
+.social li img {
+    height: 14px;
+}
