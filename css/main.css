@@ -49,7 +49,7 @@ h2 {
     font-size: 1.75em;
     line-height: 1.875rem;
     letter-spacing: 0.02em;
-    width: 386px;
+    /* width: 386px; */
     color: var(--clr2);
 }
 
@@ -98,6 +98,10 @@ h6 {
 .flex.center {
     justify-content: center;
     align-items: center;
+}
+
+.flex.flex-wrap{
+    flex-wrap: wrap;
 }
 
 ul.remove-list>* {
@@ -172,6 +176,10 @@ ul.remove-list>* {
 .card-preview {
     height: 310px;
     margin-bottom: 80px;
+}
+
+.card-list{
+    width: 100%;
 }
 
 .card-image,
@@ -295,4 +303,88 @@ ul.remove-list>* {
 
 .social li img {
     height: 14px;
+}
+
+@media screen and (max-width:1020px) {
+
+    .main-header>* {
+        width: 800px;
+    }
+
+    .main-layout>*:not(.full) {
+        width: 800px;
+    }
+
+    .card-preview {
+        height: 260px;
+    }
+
+}
+
+@media screen and (max-width:850px) {
+
+    html{
+        font-size: 12px;
+    }
+
+    .main-header>* {
+        width: 600px;
+    }
+
+    .main-layout>*:not(.full) {
+        width: 600px;
+    }
+
+    .card-preview {
+        height: 210px;
+        margin-bottom: 50px;
+    }
+
+    .card-text{
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+
+
+    /* MAKE HAMBURGER */
+
+    html{
+        font-size: 16px;
+    }
+
+    .main-header>* {
+        width: 90%;
+    }
+
+    .main-layout>*:not(.full) {
+        width: 90%;
+    }
+
+    .card-preview {
+        flex-basis: 100%;
+        margin-bottom: 450px;
+        flex-wrap: wrap;
+    }
+
+    .card-image{
+        width: 100%;
+        padding: 0;
+    }
+
+    .card-text{
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .card-text button{
+        margin: auto;
+    }
+
+    .main-footer p{
+        text-align: center;
+    }
+
 }
