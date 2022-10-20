@@ -305,49 +305,7 @@ ul.remove-list>* {
     height: 14px;
 }
 
-@media screen and (max-width:1020px) {
-
-    .main-header>* {
-        width: 800px;
-    }
-
-    .main-layout>*:not(.full) {
-        width: 800px;
-    }
-
-    .card-preview {
-        height: 260px;
-    }
-
-}
-
-@media screen and (max-width:850px) {
-
-    html{
-        font-size: 12px;
-    }
-
-    .main-header>* {
-        width: 600px;
-    }
-
-    .main-layout>*:not(.full) {
-        width: 600px;
-    }
-
-    .card-preview {
-        height: 210px;
-        margin-bottom: 50px;
-    }
-
-    .card-text{
-        padding: 0;
-    }
-
-}
-
-@media screen and (max-width:640px) {
-
+@media screen and (min-width:0px) {
 
     /* MAKE HAMBURGER */
 
@@ -385,6 +343,48 @@ ul.remove-list>* {
 
     .main-footer p{
         text-align: center;
+    }
+
+}
+
+@media screen and (min-width:640px) {
+
+    html{
+        font-size: 12px;
+    }
+
+    .main-header>* {
+        width: 600px;
+    }
+
+    .main-layout>*:not(.full) {
+        width: 600px;
+    }
+
+    .card-preview {
+        height: 210px;
+        margin-bottom: 50px;
+    }
+
+    .card-text{
+        padding: 0;
+    }
+
+}
+
+
+@media screen and (min-width:850px) {
+
+    .main-header>* {
+        width: 800px;
+    }
+
+    .main-layout>*:not(.full) {
+        width: 800px;
+    }
+
+    .card-preview {
+        height: 260px;
     }
 
 }
