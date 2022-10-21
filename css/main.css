@@ -100,7 +100,7 @@ h6 {
     align-items: center;
 }
 
-.flex.flex-wrap{
+.flex.flex-wrap {
     flex-wrap: wrap;
 }
 
@@ -108,20 +108,40 @@ ul.remove-list>* {
     list-style-type: none;
 }
 
+.transform0 {
+    transform: translateX(0%) !important;
+}
+
 .full {
     width: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 
 /* LAYOUTS */
 
 .main-layout>*:not(.full) {
-    max-width: 980px;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* COMPONENETS */
+
+body{
+    pointer-events:none;
+}
+
+body.menu-open{
+    pointer-events:auto;
+}
+
+.burger{
+    pointer-events: auto;
+}
 
 /* header */
 
@@ -133,15 +153,35 @@ ul.remove-list>* {
 
 .main-header>* {
     color: white;
-    width: 980px;
+    width: 90%;
+}
+
+.burger-menu {
+    width: 50px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.main-nav {
+    position: fixed;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(31, 29, 29);
+    justify-content: center;
+    transition: .6s;
+}
+
+.main-nav ul {
+    padding: 0;
 }
 
 .main-nav ul li {
-    width: 130px;
-    height: 130px;
-    transition: .6s;
-    cursor: pointer;
-
+    padding: 50px;
 }
 
 .main-header a {
@@ -149,36 +189,31 @@ ul.remove-list>* {
     font-family: lato-bold;
     text-decoration: none;
     letter-spacing: 0.05rem;
+    font-size: 1.5rem;
 }
 
-.main-header ul li:hover{
-    background-color: var(--clr2);
-}
-
-.main-header ul li:hover >*{
-    color: var(--clr0);
-}
-
-.main-nav ul li.clicked {
-    border-bottom: var(--clr0) 6px solid;
-}
-
-.main-nav ul li.clicked>* {
-    color: var(--clr0);
+.black-screen{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.705);
+    transition: .6s;
+    opacity: 0;
 }
 
 /* cards */
 
-.main-content{
+.main-content {
     padding-top: 210px;
 }
 
 .card-preview {
     height: 310px;
-    margin-bottom: 80px;
+    flex-wrap: wrap;
+    margin-bottom: 340px;
 }
 
-.card-list{
+.card-list {
     width: 100%;
 }
 
@@ -188,12 +223,14 @@ ul.remove-list>* {
 }
 
 .card-image {
+    width: 100%;
     aspect-ratio: 47/31;
-    padding-inline-end: 20px;
+    padding: 0;
 }
 
 .card-text {
-    padding-inline-start: 20px;
+    text-align: center;
+    flex-basis: 100%;
 }
 
 .card-preview button {
@@ -207,6 +244,7 @@ ul.remove-list>* {
     border-radius: 50px;
     width: 186px;
     height: 40px;
+    margin: auto;
 }
 
 .card-text button span {
@@ -250,8 +288,8 @@ ul.remove-list>* {
     padding-inline-start: 30px;
 }
 
-.btns button:hover{
-    color: var(--clr3) ;
+.btns button:hover {
+    color: var(--clr3);
 }
 
 /* footer */
@@ -265,6 +303,7 @@ ul.remove-list>* {
     font-size: 0.8125em;
     letter-spacing: 0.024375em;
     color: var(--clr8);
+    text-align: center;
 }
 
 .main-footer p span {
@@ -285,19 +324,19 @@ ul.remove-list>* {
     transition: .6s;
 }
 
-.social li.f:hover{
+.social li.f:hover {
     background-color: #516fad;
 }
 
-.social li.t:hover{
+.social li.t:hover {
     background-color: #1DA1F2;
 }
 
-.social li.b:hover{
+.social li.b:hover {
     background-color: #1769ff;
 }
 
-.social li.w:hover{
+.social li.w:hover {
     background-color: #144fbe;
 }
 
@@ -305,86 +344,137 @@ ul.remove-list>* {
     height: 14px;
 }
 
-@media screen and (min-width:0px) {
+@media screen and (min-width:690px) {
 
-    /* MAKE HAMBURGER */
-
-    html{
-        font-size: 16px;
-    }
-
-    .main-header>* {
-        width: 90%;
-    }
-
-    .main-layout>*:not(.full) {
-        width: 90%;
-    }
-
-    .card-preview {
-        flex-basis: 100%;
-        margin-bottom: 450px;
-        flex-wrap: wrap;
-    }
-
-    .card-image{
-        width: 100%;
-        padding: 0;
-    }
-
-    .card-text{
-        flex-basis: 100%;
-        text-align: center;
-    }
-
-    .card-text button{
-        margin: auto;
-    }
-
-    .main-footer p{
-        text-align: center;
-    }
-
-}
-
-@media screen and (min-width:640px) {
-
-    html{
+    html {
         font-size: 12px;
     }
 
     .main-header>* {
-        width: 600px;
+        width: 90%;
     }
 
     .main-layout>*:not(.full) {
-        width: 600px;
+        width: 90%;
+    }
+
+    .burger {
+        display: none;
     }
 
     .card-preview {
+        flex-basis: 50%;
         height: 210px;
         margin-bottom: 50px;
+        flex-wrap: nowrap;
     }
 
-    .card-text{
-        padding: 0;
+    .card-image {
+        padding-inline-end: 20px;
+        flex-basis: 50%;
     }
+
+    .card-text {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .card-text button {
+        margin: 0;
+    }
+
+    .main-footer p {
+        text-align: left;
+    }
+
+    .main-nav {
+        position: static;
+        flex-direction: row;
+        background-color: transparent;
+        align-items: flex-end;
+        width: 100%;
+        transform: translateX(0%);
+    }
+
+    .main-nav ul.flex {
+        flex-direction: row;
+    }
+
+    .main-nav ul li {
+        width: 130px;
+        height: 130px;
+        transition: .6s;
+        cursor: pointer;
+    }
+
+    .main-nav ul li a {
+        font-size: 1rem;
+    }
+
+
+    .main-header ul li:hover {
+        background-color: var(--clr2);
+    }
+
+    .main-header ul li:hover>* {
+        color: var(--clr0);
+    }
+
+    .main-nav ul li.clicked {
+        border-bottom: var(--clr0) 6px solid;
+    }
+
+    .main-nav ul li.clicked>* {
+        color: var(--clr0);
+    }
+
 
 }
 
 
 @media screen and (min-width:850px) {
 
+    html {
+        font-size: 14px;
+    }
+
     .main-header>* {
-        width: 800px;
+        width: 760px;
     }
 
     .main-layout>*:not(.full) {
-        width: 800px;
+        width: 760px;
     }
 
     .card-preview {
         height: 260px;
+    }
+
+}
+
+
+
+@media screen and (min-width:1100px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    .main-header>* {
+        width: 980px;
+    }
+
+    .main-layout>*:not(.full) {
+        width: 980px;
+    }
+
+    .card-preview {
+        height: 310px;
+    }
+
+    .card-text {
+        padding-inline-start: 20px;
     }
 
 }

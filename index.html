@@ -9,13 +9,26 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="onInit()" class="main-layout">
+<body onload="onInit()" class="main-layout" onclick="onToggleMenu(event)">
+
+
+    <section class="black-screen full">
+        <div class="black"></div>
+    </section>
 
     <header class="main-header flex align-center justify-center full">
         <div class="header-container flex align-center space-between">
             <h1 class="logo">Blogin<span>.</span></h1>
-            <nav class="main-nav">
-                <ul class="flex remove-list">
+            <!-- BURGER -->
+            
+            <menu class="burger flex flex-column" onclick="onToggleMenu(event)">
+                <div class="burger-menu"></div>
+                <div class="burger-menu"></div>
+                <div class="burger-menu"></div>
+            </menu>
+            <!--  -->
+            <nav class="main-nav flex flex-column">
+                <ul class="flex remove-list flex flex-column">
                     <li name="journal" class="flex center clicked"><a href="#">Journal</a></li>
                     <li name="about" class="flex center"><a href="#">About</a></li>
                     <li name="work" class="flex center"><a href="#">Work</a></li>
@@ -24,6 +37,8 @@
             </nav>
         </div>
     </header>
+
+    
 
     <main class="main-content">
 
