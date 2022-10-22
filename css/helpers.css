@@ -1,0 +1,44 @@
+.flex {
+    display: flex;
+}
+
+.flex.flex-column {
+    flex-direction: column;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-center {
+    justify-content: center;
+}
+
+.flex.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex.flex-wrap {
+    flex-wrap: wrap;
+}
+
+ul.remove-list>* {
+    list-style-type: none;
+}
+
+.transform0 {
+    transform: translateX(0%) !important;
+}
+
+.full {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
