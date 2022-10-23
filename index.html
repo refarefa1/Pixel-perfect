@@ -9,99 +9,110 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="onInit()" class="main-layout" onclick="onToggleMenu(event)">
+<body class="main-layout">
 
 
-    <section class="black-screen full">
+
+
+    <header class="main-header main-layout full">
+        <section class="header flex space-between align-center">
+            <h1 class="logo">Blogin<span>.</span></h1>
+            <button class="burger pointer" onclick="onToggleMenu(event)">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <nav class="main-nav flex flex-column">
+                <ul class="flex flex-column remove-list">
+                    <li name="journal"><a class="flex center active" href="#">
+                            <ul>
+                                <select class="dropdown">
+                                    <option>Journal</option>
+                                    <option>October 2016</option>
+                                    <option>January 2017</option>
+                                    <option>April 2017</option>
+                                    <option>July 2017</option>
+                                </select>
+                            </ul>
+                        </a></li>
+                    <li name="about"><a class="flex center" href="#">About</a></li>
+                    <li name="work"><a class="flex center" href="#">Work</a></li>
+                    <li name="contact"><a class="flex center" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+
+
+
+    <section onclick="onToggleMenu(event)" class="black-screen full">
         <div class="black"></div>
     </section>
 
-    <header class="main-header flex align-center justify-center full">
-        <div class="header-container flex align-center space-between">
-            <h1 class="logo">Blogin<span>.</span></h1>
-            <menu class="burger flex flex-column" onclick="onToggleMenu(event)">
-                <div class="burger-menu"></div>
-                <div class="burger-menu"></div>
-                <div class="burger-menu"></div>
-            </menu>
-            <nav class="main-nav flex flex-column">
-                <ul class="flex remove-list flex flex-column">
-                    <li name="journal" class="flex center clicked"><a href="#">Journal</a></li>
-                    <li name="about" class="flex center"><a href="#">About</a></li>
-                    <li name="work" class="flex center"><a href="#">Work</a></li>
-                    <li name="contact" class="flex center"><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    
+    <section class="modal flex flex-column align-center full main-layout"></section>
 
     <main class="main-content">
 
-        <section class="card-list">
-
-            <article class="card-preview flex">
-                <img class="card-image" src="img/img1.jpg" alt="">
-                <div class="card-text flex flex-column space-between">
-                    <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
-                        doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Duis aute
-                        irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-                    <button>Continue reading <span>→</span></button>
-                </div>
-            </article>
-
-            <article class="card-preview flex">
-                <img class="card-image" src="img/img2.jpg" alt="">
-                <div class="card-text flex flex-column space-between">
-                    <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
-                        doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Duis aute
-                        irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-                    <button>Continue reading <span>&#129042</span></button>
-                </div>
-            </article>
-
-            <article class="card-preview flex">
-                <img class="card-image" src="img/img3.jpg" alt="">
-                <div class="card-text flex flex-column space-between">
-                    <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
-                        doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Duis aute
-                        irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-                    <button>Continue reading <span>&#129042</span></button>
-                </div>
-            </article>
+        <article class="card-preview flex">
+            <img class="card-image" src="img/img1.jpg" alt="">
+            <div class="card-text flex flex-column">
+                <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                    doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...</p>
+                <button class="btn-round btn-arrow" onclick="onRenderModal(1)">Continue reading</button>
+            </div>
+        </article>
+        <article class="card-preview flex">
+            <img class="card-image" src="img/img2.jpg" alt="">
+            <div class="card-text flex flex-column">
+                <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                    doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...</p>
+                <button class="btn-round btn-arrow" onclick="onRenderModal(2)">Continue reading</button>
+            </div>
+        </article>
+        <article class="card-preview flex">
+            <img class="card-image" src="img/img3.jpg" alt="">
+            <div class="card-text flex flex-column">
+                <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                    doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...</p>
+                <button class="btn-round btn-arrow" onclick="onRenderModal(3)">Continue reading</button>
+            </div>
+        </article>
 
 
-            <section class="btns flex space-between">
-                <button class="prev-btn">← PREVIOUS</button>
-                <button class="next-btn">NEXT →</button>
-            </section>
+
+        <section class="btns flex space-between">
+            <button class="prev-btn">PREVIOUS</button>
+            <button class="next-btn">NEXT</button>
+        </section>
 
     </main>
 
-    </section>
-
-    <footer class="main-footer flex flex-column align-center justify-center full">
+    <footer class="main-footer main-layout flex flex-column align-center justify-center full">
         <h1 class="logo">Blogin<span>.</span> </h1>
-        <p>© 2014 Blogin.com - All Rights Reserved - Find more free Templates at <span>Pixelhint.com</span></p>
-        <ul class="social flex remove-list">
-            <li class="f flex center"><a class="flex center" href="#"><img src="img/social/facebook.svg" alt=""></a>
-            </li>
-            <li class="t flex center"><a class="flex center" href="#"><img src="img/social/twitter.svg" alt=""></a></li>
-            <li class="b flex center"><a class="flex center" href="#"><img src="img/social/behance.svg" alt=""></a></li>
-            <li class="w flex center"><a class="flex center" href="#"><img src="img/social/web.svg" alt=""></a></li>
+        <small>© 2014 Blogin.com - All Rights Reserved - Find more free Templates at
+            <strong>Pixelhint.com</strong></small>
+        <ul class="social flex justify-center remove-list">
+            <li><a class="fa facebook" href="#"></a></li>
+            <li><a class="fa twitter" href="#"></a></li>
+            <li><a class="fa behance" href="#"></a></li>
+            <li><a class="fa pinterest" href="#"></a></li>
         </ul>
     </footer>
 
 
 
-    <script src="js/main-controller.js"></script>
+
+    <script src="js/main.js"></script>
 
 </body>
 

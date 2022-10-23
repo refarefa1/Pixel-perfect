@@ -1,0 +1,144 @@
+body {
+    pointer-events: auto;
+}
+
+.main-layout>*:not(.full) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* HEADER */
+
+.main-header .header {
+    align-items: center;
+}
+
+.main-header .burger {
+    display: none;
+}
+
+.main-header ul>*:not(:first-child):hover {
+    background-color: var(--clr2);
+    color: var(--clr0);
+}
+
+.main-header h1,
+.main-header nav {
+    flex-basis: 50%;
+}
+
+.main-header .main-nav {
+    position: static;
+    background-color: transparent;
+    transform: translateX(0%);
+}
+
+.main-header .main-nav ul.flex {
+    flex-direction: row;
+}
+
+.main-header .main-nav ul {
+    margin: 0;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.main-header .main-nav ul li {
+    margin: 0;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.main-header .main-nav ul li a {
+    width: 130px;
+    height: 130px;
+    font-size: 1rem;
+    color: white;
+}
+
+.main-header .main-nav ul .dropdown {
+    transition: .6s;
+}
+
+.main-header .main-nav ul .dropdown:hover.dropdown>* {
+    position: relative;
+}
+
+.main-header .main-nav ul li select {
+    cursor: pointer;
+    color: var(--clr0);
+}
+
+.main-header .main-nav ul li select option:not(:checked) {
+    color: black;
+}
+
+.main-header .main-nav ul li a.active {
+    box-shadow: inset 0px -6px 0px 0px var(--clr0);
+    color: var(--clr0);
+}
+
+
+
+/* MODAL */
+
+
+.modal .btn-close {
+    padding-top: 40px;
+    font-size: 2em;
+}
+
+.modal .btn-close::before {
+    content: "⬅";
+    color: white;
+}
+
+.modal img {
+    padding-top: 100px;
+    width: 50%;
+}
+
+/* MAIN */
+
+.main-content .card-preview {
+    flex-basis: 50%;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+}
+
+.main-content .card-preview .card-image {
+    padding-inline-end: 20px;
+    width: 50%;
+}
+
+.main-content .card-preview .card-text {
+    margin: 0;
+    text-align: left;
+}
+
+.main-content .card-preview .card-text button {
+    margin: auto auto 0 0;
+    transition: .6s;
+}
+
+.social .fa {
+    transition: .6s;
+}
+
+.social .fa.facebook:hover {
+    background-color: #516fad;
+}
+
+.social .fa.twitter:hover {
+    background-color: #1DA1F2;
+}
+
+.social .fa.behance:hover {
+    background-color: #1769ff;
+}
+
+.social .fa.pinterest:hover {
+    background-color: #144fbe;
+}

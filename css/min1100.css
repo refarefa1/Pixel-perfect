@@ -1,0 +1,11 @@
+.main-layout>*:not(.full) {
+    max-width: 980px;
+}
+
+.card-preview {
+    height: 310px;
+}
+
+.card-text {
+    padding-inline-start: 20px;
+}

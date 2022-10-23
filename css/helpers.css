@@ -1,3 +1,5 @@
+/* HELPERS */
+
 .flex {
     display: flex;
 }
@@ -27,12 +29,16 @@
     flex-wrap: wrap;
 }
 
-ul.remove-list>* {
+.remove-list >* {
     list-style-type: none;
 }
 
-.transform0 {
-    transform: translateX(0%) !important;
+.pointer{
+    pointer-events: auto;
+}
+
+.no-pointer{
+    pointer-events: none;
 }
 
 .full {
@@ -41,4 +47,44 @@ ul.remove-list>* {
 
 .hide {
     display: none;
+}
+
+.main-header .main-nav.open{
+    transform: translateY(40%);
+}
+
+button , .btn {
+    background-color: transparent;
+    font-family: lato-bold;
+    font-size: 1em;
+    line-height: 1.25em;
+    cursor: pointer;
+    padding: 0.7em 1.2em;
+    margin: 20px auto;
+    color: var(--clr5);
+    border: var(--clr5) 2px solid;
+}
+
+.btn-round{
+    border-radius: 2em;
+}
+
+.fa {
+    font-family: fa;
+}
+
+.fa.facebook::before {
+    content: "\f39e";
+}
+
+.fa.twitter::before {
+    content: "\f099";
+}
+
+.fa.behance::before {
+    content: "\f1b4";
+}
+
+.fa.pinterest::before {
+    content: "\f231";
 }
